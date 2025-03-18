@@ -11,8 +11,8 @@ def print_board(board):
   print(print_board)
 
 def move(player, board, score):
-  r = 0
-  c = 0
+  r = 1
+  c = 1
   while board[r][c] != ' ':
     c = c + 1
     if c > 2:
