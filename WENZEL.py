@@ -1,5 +1,5 @@
 team_name = 'WENZEL'
-strategy_name = 'I DONT KNOW YET'
+strategy_name = 'middle, corners, then random'
 strategy_description = 'Play the next open spot.'
 
 def print_board(board):
@@ -18,5 +18,12 @@ def move(player, board, score):
     if c > 2:
       c = 0
       r = r + 1
+def move (player, board, score):
+  r = 0
+  c = 0
+  if (r = 1) and (c = 1):
+    return r = 1 
+    return c = 1
+
   
   return r, c
