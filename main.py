@@ -4,12 +4,12 @@ import importlib
 
 import example0
 import example1
-import example2
+import marquez
 
 number_of_rounds = 100
 modules = [example0,
            example1,
-           example2,
+           marquez
           ]
 
 test_board = [['O', 'X', 'O'],
