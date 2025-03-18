@@ -1,3 +1,4 @@
+import random
 team_name = 'WENZEL'
 strategy_name = 'middle, corners, then random'
 strategy_description = 'Play the next open spot.'
@@ -10,20 +11,27 @@ def print_board(board):
   print(board[2][0]+'|'+board[2][1]+'|'+board[2][2])
   print(print_board)
 
-def move(player, board, score):
-  r = 0
-  c = 0
-  while board[r][c] != ' ':
-    c = c + 1
-    if c > 2:
-      c = 0
-      r = r + 1
 def move (player, board, score):
   r = 0
   c = 0
-  if (r = 1) and (c = 1):
-    return r = 1 
-    return c = 1
+  if board[1][1] = ' ':
+    r = 1 
+    c = 1
+  elif board[0][0] = ' ':
+    r = 0
+    c = 0
+  elif board[0][2] = ' ':
+    r = 0
+    c = 2
+  elif board[2][0] = ' ':
+    r = 2
+    c = 0
+  elif board[2][2] = ' ':
+    r = 2
+    c = 2
+  else:
+    while board[r][c] = ' ':
+      r = random.randint(0,2)
+      c = random.randint(0,2)
+  return (r,c)
 
-  
-  return r, c
