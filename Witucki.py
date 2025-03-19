@@ -1,6 +1,7 @@
+
 team_name = 'Witucki'
-strategy_name = 'Next Open, then last open'
-strategy_description = 'Play the next open spot, then play the last spot opean then go back and forward till win.'
+strategy_name = 'corners then next opean'
+strategy_description = 'It will play the corners then the next opean from the strat'
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
@@ -11,12 +12,18 @@ def print_board(board):
   print(print_board)
 
 def move(player, board, score):
-  r = 2
-  c = 2
-  while board[r][c] != ' ':
-    c = c - 1
-    if c < 0:
-      c = 2
-      r = r - 1
+   
+   corners = [(0,0), (0,2), (2,0), (2,2)]
+   corners = [(r,c) for r, c in corners if board [r][c] == ""]
+   if corners:
+      return corners[0]
+   r =0
+   c =0
+   while board[r][c] != ' ':
+    c = c + 1
+    if c > 2:
+      c = 0
+      r = r + 1
+
   
-  return r, c
+   return r, c
