@@ -1,7 +1,7 @@
 import random
 team_name = 'Abboud'
 strategy_name = 'Middle-Slash'
-strategy_description = 'Play the next open spot.'
+strategy_description = 'try to get the middle and get a three in a row across it'
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
