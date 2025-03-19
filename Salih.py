@@ -1,6 +1,6 @@
 team_name = 'Salih'
-strategy_name = 'Last Open'
-strategy_description = 'Play the Last open spot.'
+strategy_name = 'Strategic Positioning'
+strategy_description = 'Focus on winning, blocking threats, and controlling key positions.'
 
 import random
 
