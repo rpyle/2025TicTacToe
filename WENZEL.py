@@ -1,7 +1,11 @@
 import random
 team_name = 'WENZEL'
 strategy_name = 'middle, corners, then random'
-strategy_description = 'Play the next open spot.'
+strategy_description = 'This plays the middle first, if open, then it hits ' \
+'the corners in the right corner moving all the way left then down respectively,' \
+'then if the corners and the middle are taken the four squares left are randomly chosen ' \
+
+
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
