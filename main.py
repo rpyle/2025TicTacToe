@@ -8,10 +8,10 @@ import example1
 import example2
 
 number_of_rounds = 100
-modules = [elliott,
+modules = [example0,
            example1,
            example2,
-           example0,
+           elliott
           ]
 
 test_board = [['O', 'X', 'O'],

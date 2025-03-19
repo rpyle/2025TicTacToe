@@ -21,5 +21,11 @@ def move(player, board, score):
       if c > 2:
         c = 0
         r = 2
+      if board[r][c] != ' ':
+        while board[r][c] != ' ':
+          c = c + 1
+          if c > 2:
+            c = 0
+            r = r + 1
   
   return r, c
