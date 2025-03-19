@@ -11,12 +11,15 @@ def print_board(board):
   print(print_board)
 
 def move(player, board, score):
-  r = 0
-  c = 0
-  while board[r][c] != ' ':
-    c = c + 1
-    if c > 2:
-      c = 0
-      r = r + 1
+  r = 1
+  c = 1
+  if board[r][c] != ' ':
+    c = 0
+    r = 0
+    while board[r][c] != ' ':
+      c = c + 1
+      if c > 2:
+        c = 0
+        r = r + 1
   
   return r, c
