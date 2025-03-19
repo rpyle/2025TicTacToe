@@ -10,7 +10,6 @@ def print_board(board):
   print(board[2][0]+'|'+board[2][1]+'|'+board[2][2])
   print(print_board)
 
-
 def move(player, board, score):
   r = 1
   c = 1
