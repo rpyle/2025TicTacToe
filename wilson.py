@@ -11,12 +11,21 @@ def print_board(board):
   print(print_board)
 
 def move(player, board, score):
-  r = 0
-  c = 0
-  while board[r][c] != ' ':
-    c = c + 1
-    if c > 2:
-      c = 0
-      r = r + 1
-  
-  return r, c
+    corners = [(0, 0), (0, 2), (2, 0), (2, 2)]
+    sides = [(0, 1), (1, 0), (1, 2), (2, 1)]
+    
+    corners = [(r, c) for r, c in corners if board[r][c] == ' ']
+    if corners:
+        return corners[0]  
+    
+    sides = [(r, c) for r, c in sides if board[r][c] == ' ']
+    if sides:
+        return sides[0]  
+    
+
+    if board[1][1] == ' ':
+        return 1, 1
+    
+
+    
+    return 0, 0 
