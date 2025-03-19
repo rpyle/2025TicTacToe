@@ -2,6 +2,7 @@ import random
 import os.path
 import importlib
 
+import elliott
 import example0
 import example1
 import example2
@@ -10,6 +11,7 @@ number_of_rounds = 100
 modules = [example0,
            example1,
            example2,
+           elliott,
           ]
 
 test_board = [['O', 'X', 'O'],
