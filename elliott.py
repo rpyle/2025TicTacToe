@@ -20,6 +20,6 @@ def move(player, board, score):
       c = c + 1
       if c > 2:
         c = 0
-        r = r + 1
+        r = 2
   
   return r, c
