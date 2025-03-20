@@ -37,7 +37,7 @@ def move(player, board, score):
     # If no immediate win or block, play the best strategic move (corner or edge)
     # Check if any corners are available
     corners = [(0, 0), (0, 2), (2, 0), (2, 2)]
-    random.shuffle(corners)  # Shuffle to avoid being too predictable
+    random.shuffle(corners)  
     for r, c in corners:
         if board[r][c] == ' ':
             return r, c
