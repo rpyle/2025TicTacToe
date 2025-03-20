@@ -5,6 +5,7 @@ import importlib
 import example0
 import example1
 import example2
+import Salih
 
 
 
@@ -12,11 +13,7 @@ number_of_rounds = 100
 modules = [example0,
            example1,
 
-           example2,
-
-=======
            example2
-
           ]
 
 test_board = [['O', 'X', 'O'],
