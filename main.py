@@ -5,6 +5,7 @@ import importlib
 import example0
 import example1
 import example2
+import singh
 
 number_of_rounds = 100
 modules = [example0,
