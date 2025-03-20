@@ -1,22 +1,217 @@
-team_name = 'test'
-strategy_name = 'CenterStartCheckForWinIfNot5050Tit4TatOrRandom'
-strategy_description = 'Play the next open spot.'
+import random as random
 
-def print_board(board):
-  print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
-  print('-+-+-')
-  print(board[1][0]+'|'+board[1][1]+'|'+board[1][2])
-  print('-+-+-')
-  print(board[2][0]+'|'+board[2][1]+'|'+board[2][2])
-  print(print_board)
+#player = 0
+#score = 0
+#board = [['O', ' ', ' '],
+#         [' ', ' ', ' '],
+#         ['X', ' ', ' ']]
+
+team_name = 'poore'
+strategy_name = 'CenterThenCheckTwosThenRandomOpen'
+strategy_description = 'Play center first, then block two in a rows, then play a random open.'
+
+
+
 
 def move(player, board, score):
-  r = 0
-  c = 0
-  while board[r][c] != ' ':
-    c = c + 1
-    if c > 2:
-      c = 0
-      r = r + 1
-  
-  return r, c
+    global r, c
+    stop = 0
+    if board[0][0] == ' ' and board[0][1] == ' ' and board[0][2] == ' ' and board[1][0] == ' ' and board[1][1] == ' ' and board[1][2] == ' ' and board[2][0] == ' ' and board[2][1] == ' ' and board[2][2] == ' ':
+        r = 1
+        c = 1
+        stop = 1
+    r=0
+    c=0
+    if board[0][0] != ' ' and stop == 0:
+        occupied = board[0][0]
+        if board[0][1] == occupied:
+            r=0
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][0] != ' ' and stop == 0:
+        occupied = board[0][0]
+        if board[0][2] == occupied:
+            r=0
+            c=1
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][0] != ' ' and stop == 0:
+        occupied = board[0][0]
+        if board[1][0] == occupied:
+            r=2
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][0] != ' ' and stop == 0:
+        occupied = board[0][0]
+        if board[2][0] == occupied:
+            r=1
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][0] != ' ' and stop == 0:
+        occupied = board[0][0]
+        if board[1][1] == occupied:
+            r=2
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][0] != ' ' and stop == 0:
+        occupied = board[0][0]
+        if board[2][2] == occupied:
+            r=1
+            c=1
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][1] != ' ' and stop == 0:
+        occupied = board[0][1]
+        if board[0][1] == occupied:
+            r=0
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][1] != ' ' and stop == 0:
+        occupied = board[0][1]
+        if board[0][2] == occupied:
+            r=0
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][1] != ' ' and stop == 0:
+        occupied = board[0][1]
+        if board[1][1] == occupied:
+            r=2
+            c=1
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][1] != ' ' and stop == 0:
+        occupied = board[0][1]
+        if board[2][1] == occupied:
+            r=1
+            c=1
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][2] != ' ' and stop == 0:
+        occupied = board[0][2]
+        if board[1][1] == occupied:
+            r=2
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][2] != ' ' and stop == 0:
+        occupied = board[0][2]
+        if board[1][2] == occupied:
+            r=2
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][2] != ' ' and stop == 0:
+        occupied = board[0][2]
+        if board[2][0] == occupied:
+            r=1
+            c=1
+            if board[r][c] == ' ':
+                stop = 1
+    if board[0][2] != ' ' and stop == 0:
+        occupied = board[0][2]
+        if board[2][2] == occupied:
+            r=1
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][0] != ' ' and stop == 0:
+        occupied = board[1][0]
+        if board[1][1] == occupied:
+            r=1
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][0] != ' ' and stop == 0:
+        occupied = board[1][0]
+        if board[1][2] == occupied:
+            r=1
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][0] != ' ' and stop == 0:
+        occupied = board[1][0]
+        if board[2][0] == occupied:
+            r=0
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][1] != ' ' and stop == 0:
+        occupied = board[1][1]
+        if board[1][2] == occupied:
+            r=1
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][1] != ' ' and stop == 0:
+        occupied = board[1][1]
+        if board[2][0] == occupied:
+            r=0
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][1] != ' ' and stop == 0:
+        occupied = board[1][1]
+        if board[2][1] == occupied:
+            r=0
+            c=1
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][1] != ' ' and stop == 0:
+        occupied = board[1][1]
+        if board[2][2] == occupied:
+            r=0
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][2] != ' ' and stop == 0:
+        occupied = board[1][2]
+        if board[1][2] == occupied:
+            r=1
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+    if board[1][2] != ' ' and stop == 0:
+        occupied = board[1][2]
+        if board[2][2] == occupied:
+            r=0
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[2][0] != ' ' and stop == 0:
+        occupied = board[2][0]
+        if board[2][1] == occupied:
+            r=2
+            c=2
+            if board[r][c] == ' ':
+                stop = 1
+    if board[2][0] != ' ' and stop == 0:
+        occupied = board[2][0]
+        if board[2][2] == occupied:
+            r=2
+            c=1
+            if board[r][c] == ' ':
+                stop = 1
+    if board[2][1] != ' ' and stop == 0:
+        occupied = board[2][1]
+        if board[2][2] == occupied:
+            r=2
+            c=0
+            if board[r][c] == ' ':
+                stop = 1
+
+    if stop == 0:
+        while board[r][c] != ' ':
+            r = random.randint(0,2)
+            c = random.randint(0,2)
+
+    return r, c
+
+#move(player, board, score)
+#print(r)
+#print(c)
