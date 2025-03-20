@@ -10,8 +10,7 @@ import WENZEL
 number_of_rounds = 100
 modules = [example0,
            example1,
-           example2,
-           WENZEL
+           example2
           ]
 
 test_board = [['O', 'X', 'O'],
