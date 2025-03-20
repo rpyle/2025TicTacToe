@@ -5,9 +5,11 @@ import importlib
 import example0
 import example1
 import example2
+import gans
 
 number_of_rounds = 100
-modules = [example0,
+modules = [gans,
+           example0,
            example1,
            example2,
           ]
