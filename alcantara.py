@@ -18,6 +18,13 @@ def corner_selection():
   if board(corners[choice][1],corners[choice][2]) == ' ':
     append.corners(choice)
 
+spaces = [
+          [0,0], [0,1], [0,2],
+
+          [1,0], [1,1], [1,2],
+
+          [2,0], [2,1], [2,2],
+]
 def move(player, board, score): 
  #New strat below  -  "The Center Corner"
   r = 0
@@ -29,8 +36,14 @@ def move(player, board, score):
     return r, c
   
   #offense
-  if #calculate # of spaces taken TODO
+  if 
   #TODO
+
   #defense
-  #TODO
+  else:
+    #This randomly selects an opem spot
+    while board[r][c] != ' ':
+    r = random.randint(0,2)
+    c = random.randint(0,2)
+  
   return r, c
