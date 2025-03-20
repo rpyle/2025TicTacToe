@@ -1,6 +1,8 @@
+import random
+
 team_name = 'martinez'
-strategy_name = 'Last Open'
-strategy_description = 'Play the last open spot.'
+strategy_name = 'Middle 4 Corners Random'
+strategy_description = 'Play the center if possible, then play corners if possible, then random.'
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
@@ -11,12 +13,23 @@ def print_board(board):
   print(print_board)
 
 def move(player, board, score):
-  r = 2
-  c = 2
+  r = 0
+  c = 0
   while board[r][c] != ' ':
-    c = c - 1
-    if c < 0:
+    if board[0][0] == ' ':
+      r = 1
+      c = 1
+    elif board[2][0] == ' ':
+      r = 2
+      c = 0
+    elif board[0][2] == ' ':
+      r = 0
       c = 2
-      r = r - 1
+    elif board[2][2] == ' ':
+      r = 2
+      c = 2
+
+    r = random.randint(0,2)
+    c = random.randint(0,2)  
   
   return r, c

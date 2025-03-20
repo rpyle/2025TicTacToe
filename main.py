@@ -11,7 +11,7 @@ number_of_rounds = 100
 modules = [example0,
            example1,
            example2,
-           martinez,
+           martinez
           ]
 
 test_board = [['O', 'X', 'O'],
