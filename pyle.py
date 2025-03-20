@@ -1,5 +1,5 @@
 team_name = 'pyle'
-strategy_name = 'Last Open'
+strategy_name = 'Last Open move'
 strategy_description = 'Play the last open spot.'
 
 def print_board(board):
