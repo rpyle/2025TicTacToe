@@ -11,12 +11,12 @@ def print_board(board):
   print(print_board)
 
 import random
-corners = [[0,0] , [0,2], [2,0], [2,2]]
-midpoints = [[0,1], [1,0], [1,2], [2,1]]
 
 def move(player, board, score): 
  #New strat below  -  "The Center Corner"
-  global corners, midpoints
+  corners = [[0,0] , [0,2], [2,0], [2,2]]
+  midpoints = [[0,1], [1,0], [1,2], [2,1]]
+
   r = 0
   c = 0
 
@@ -28,15 +28,22 @@ def move(player, board, score):
   
   #offense
   if player == "X":
-  
-    while corners != 0:
-      choice = random.randint(len(corners))
-      if board(corners[choice][1],corners[choice][2]) == ' ':
-        corners.remove(choice)
+    #play the corners
+    corners_index = 0
+    while (corners_index != 4):
+      location = corners[corners_index]
+      row_choice = location[0]
+      column_choice = location[1]
+      corners_index += 1
+      if board[row_choice][column_choice] == ' ':
+        r = row_choice
+        c = column_choice
+        return r, c
+
 
   #This randomly selects an opem spot
-  while board[r][c] != ' ':
-    r = random.randint(0,2)
-    c = random.randint(0,2)
+    while board[r][c] != ' ':
+      r = random.randint(0,2)
+      c = random.randint(0,2)
   
   return r, c
