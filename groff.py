@@ -1,6 +1,9 @@
-team_name = 'test'
-strategy_name = 'Next Open'
-strategy_description = 'Play the next open spot.'
+import random
+team_name = 'groff'
+strategy_name = 'Line, Random'
+strategy_description = 'Try to get the final column, and then go random.'
+
+Iteration = 1
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
@@ -11,12 +14,25 @@ def print_board(board):
   print(print_board)
 
 def move(player, board, score):
+  global Iteration
   r = 0
-  c = 0
+  c = 2
   while board[r][c] != ' ':
-    c = c + 1
-    if c > 2:
-      c = 0
+    if Iteration < 4:
       r = r + 1
+      Iteration = Iteration + 1
+      if c > 2:
+        c = 0
+        r = r + 1
+      if r > 2: 
+        r = 0
+
+    else:
+      r = random.randint(0,2)
+      c = random.randint(0,2)
+      Iteration = Iteration + 1
+    
+
+
   
   return r, c
