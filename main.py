@@ -5,13 +5,11 @@ import importlib
 import example0
 import example1
 import example2
-import Johnson
 
 number_of_rounds = 100
-modules = [example0,
+modules = [gans,
+           example0,
            example1,
-           example2,
-           Johnson
           ]
 
 test_board = [['O', 'X', 'O'],
@@ -84,7 +82,7 @@ def play_tournament(modules):
   return scores
   
 def play_iterative_rounds(player1, player2):
-  print(player1, player2, )
+  print(player1, player2)
   score1 = 0
   score2 = 0
   for round in range(number_of_rounds):
