@@ -1,6 +1,7 @@
+import random
 team_name = 'Bennett'
-strategy_name = '3 Corners'
-strategy_description = 'Get 3 corners'
+strategy_name = 'Left Column'
+strategy_description = 'Go from the top right corner down to the bottom left corner for a win'
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
@@ -11,13 +12,11 @@ def print_board(board):
   print(print_board)
 
 def move(player, board, score):
-  r = 0
-  c = 0
-
-  while board[r][c] != ' ':
-    c = c + 2
-    if c > 2:
-      c = 0
-      r = r + 2
-  
-  return r, c
+    r = 0
+    c = 2
+    while board[r][c] != ' ':
+      r = r + 1
+      if r > 2:
+        r = 0
+        c = c - 1
+    return r, c
