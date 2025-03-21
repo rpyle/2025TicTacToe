@@ -5,11 +5,13 @@ import importlib
 import example0
 import example1
 import example2
+import Denaut
 
 number_of_rounds = 100
 modules = [example0,
            example1,
            example2,
+           Denaut
           ]
 
 test_board = [['O', 'X', 'O'],
