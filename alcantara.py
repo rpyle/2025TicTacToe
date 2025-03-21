@@ -1,6 +1,6 @@
 team_name = 'alcantara'
-strategy_name = "The Idiot's Project"
-strategy_description = 'Plays centers, then corners, then midpoints'
+strategy_name = 'The Center Corner Capture'
+strategy_description = 'Capture center, take corners, complete the lines... or tie  >:) '
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
@@ -20,40 +20,23 @@ def move(player, board, score):
   r = 0
   c = 0
 
-  #takes center if unoccupied
+  #takes the center if available
   if board[1][1] == ' ':
     r = 1
     c = 1
     return r, c
   
   #offense
-  if player == "O":
-    while(r == 1) and (c == 1):
-      taken_corner = 0
-      index = 0
-      if taken_corner == 4:
-        while board[row][column] != " ":
-          choice = midpoints(index)
-          row = choice[0]
-          column = choice[1]
-          index =+ 1
-        
-        r = row
-        c = column
-        return r, c
-        
-        #take midpoints at random
-        
-      elif board[row][column] == ' ':
-        choice = random(corners)
-        row = choice[0]
-        column = choice[1]
-        
-        r = row
-        c = column
-        return r, c
-      else:
-        taken_corner += 1
+  if player == "X":
+  
+    while corners != 0:
+      choice = random.randint(len(corners))
+      if board(corners[choice][1],corners[choice][2]) == ' ':
+        corners.remove(choice)
 
+  #This randomly selects an opem spot
+  while board[r][c] != ' ':
+    r = random.randint(0,2)
+    c = random.randint(0,2)
+  
   return r, c
-
