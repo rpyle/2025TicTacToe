@@ -1,6 +1,6 @@
 team_name = 'alcantara'
-strategy_name = 'The Center Corner Capture'
-strategy_description = 'Take center, corners, midpoints'
+strategy_name = "The Idiot's Project"
+strategy_description = 'Plays centers, then corners, then midpoints'
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
@@ -16,7 +16,7 @@ midpoints = [[0,1], [1,0], [1,2], [2,1]]
 
 def move(player, board, score): 
  #New strat below  -  "The Center Corner"
-  global corners
+  global corners, midpoints
   r = 0
   c = 0
 
@@ -27,15 +27,16 @@ def move(player, board, score):
     return r, c
   
   #offense
-  if player == "X":
+  if player == "O":
     while(r == 1) and (c == 1):
       taken_corner = 0
-      
+      index = 0
       if taken_corner == 4:
         while board[row][column] != " ":
-          choice = random(midpoints)
+          choice = midpoints(index)
           row = choice[0]
           column = choice[1]
+          index =+ 1
         
         r = row
         c = column
@@ -54,14 +55,5 @@ def move(player, board, score):
       else:
         taken_corner += 1
 
-      
-
-
-  #defense - selects a spot at random; taken from file example2.py
-  else:
-    while board[r][c] != ' ':
-      r = random.randint(0,2)
-      c = random.randint(0,2)
-  
   return r, c
 
