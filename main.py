@@ -5,13 +5,11 @@ import importlib
 import example0
 import example1
 import example2
-import keith
 
 number_of_rounds = 100
-modules = [example0,
+modules = [gans,
+           example0,
            example1,
-           example2,
-           keith
           ]
 
 test_board = [['O', 'X', 'O'],
