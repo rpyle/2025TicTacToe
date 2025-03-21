@@ -28,29 +28,58 @@ def move(player, board, score):
     return r, c
   
   #offense
-  if player == "X":
-    #fill the gaps
-    #TODO?
+
+  #fill the gaps
+  if board[0][0] == player:
+    top_left = True
+  elif board[0][2] == player:
+    top_right = True
+  elif board[2][0] == player:
+    bottom_left = True
+  elif board[2][2] == player:
+    bottom_right = True
+  
+  #fill the gaps
+  if (top_left) and (top_right) and (board[0][1]):
+    r = 0
+    c = 1
+    return r, c
+  elif (top_left) and (bottom_left) and (board[1][0]):
+    r = 1
+    c = 0
+    return r, c
+  elif (bottom_right) and (bottom_left) and (board[2][1]):
+    r = 2
+    c = 1
+    return r, c
+  elif (bottom_right) and (top_right) and (board[1][2]):
+    r = 1
+    c = 2
+    return r, c
+  
+  
+  #play the corners
+  index_corners = 0
+  while (index_corners != 4):
+    location = corners[index_corners]
+    row_choice = location[0]
+    column_choice = location[1]
+    index_corners += 1
     
     
-    #play the corners
-    corners_index = 0
-    while (corners_index != 4):
-      location = corners[corners_index]
-      row_choice = location[0]
-      column_choice = location[1]
-      corners_index += 1
-      
-      
-      if board[row_choice][column_choice] == ' ':
-        r = row_choice
-        c = column_choice
-        return r, c
+    if board[row_choice][column_choice] == ' ':
+      r = row_choice
+      c = column_choice
+      return r, c
 
 
-  #This randomly selects an open spot
-    while board[r][c] != ' ':
-      r = random.randint(0,2)
-      c = random.randint(0,2)
+  # this is example0.py, it serves as a backup
+    r = 0
+  c = 0
+  while board[r][c] != ' ':
+    c = c + 1
+    if c > 2:
+      c = 0
+      r = r + 1
   
   return r, c
