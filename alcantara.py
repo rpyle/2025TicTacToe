@@ -14,8 +14,9 @@ import random
 
 def move(player, board, score): 
  #New strat below  -  "The Center Corner"
-  corners = [[0,0] , [0,2], [2,0], [2,2]]
-  midpoints = [[0,1], [1,0], [1,2], [2,1]]
+  corners = [
+    [0,0] , [0,2], [2,0], [2,2]
+             ]
 
   r = 0
   c = 0
@@ -28,6 +29,10 @@ def move(player, board, score):
   
   #offense
   if player == "X":
+    #fill the gaps
+    #TODO?
+    
+    
     #play the corners
     corners_index = 0
     while (corners_index != 4):
@@ -35,13 +40,15 @@ def move(player, board, score):
       row_choice = location[0]
       column_choice = location[1]
       corners_index += 1
+      
+      
       if board[row_choice][column_choice] == ' ':
         r = row_choice
         c = column_choice
         return r, c
 
 
-  #This randomly selects an opem spot
+  #This randomly selects an open spot
     while board[r][c] != ' ':
       r = random.randint(0,2)
       c = random.randint(0,2)
