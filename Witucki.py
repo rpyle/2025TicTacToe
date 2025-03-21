@@ -38,7 +38,8 @@ def move(player, board, score):
      corners = [(r,c) for r, c in corners if board [r][c] == ""]
      if corners:
         return corners[0]
-     
+    
 
+    
   
    return r, c
