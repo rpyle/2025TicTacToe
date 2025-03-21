@@ -1,6 +1,6 @@
 team_name = 'alcantara'
 strategy_name = 'The Center Corner Capture'
-strategy_description = 'Capture center, take corners, complete the lines... or tie  >:) '
+strategy_description = 'Take center, corners, complete series'
 
 def print_board(board):
   print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
@@ -12,21 +12,11 @@ def print_board(board):
 
 import random
 corners = [[0,0] , [0,2], [2,0], [2,2]]
-def corner_selection():
-  global corners
-  choice = random.randint(len(corners))
-  if board(corners[choice][1],corners[choice][2]) == ' ':
-    append.corners(choice)
+midpoints = [[0,1], [1,0], [1,2], [2,1]]
 
-spaces = [
-          [0,0], [0,1], [0,2],
-
-          [1,0], [1,1], [1,2],
-
-          [2,0], [2,1], [2,2],
-]
 def move(player, board, score): 
  #New strat below  -  "The Center Corner"
+  global corners
   r = 0
   c = 0
 
@@ -36,14 +26,20 @@ def move(player, board, score):
     return r, c
   
   #offense
-  if 
-  #TODO
+  if player == "X":
+  
+    while corners != 0:
+      choice = random(board)
+      
+      
+      
+      else:
+        # TODO
 
-  #defense
+  #defense - selects a spot at random; taken from file example2.py
   else:
-    #This randomly selects an opem spot
     while board[r][c] != ' ':
-    r = random.randint(0,2)
-    c = random.randint(0,2)
+      r = random.randint(0,2)
+      c = random.randint(0,2)
   
   return r, c
