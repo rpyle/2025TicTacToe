@@ -27,10 +27,7 @@ def move(player, board, score):
     c = 1
     return r, c
   
-  #offense
-
-  #fill the gaps
-  
+  # corners are open?
   top_left = False
   top_right = False
   bottom_left = False
@@ -38,14 +35,14 @@ def move(player, board, score):
   
   if board[0][0] == player:
     top_left = True
-  elif board[0][2] == player:
+  if board[0][2] == player:
     top_right = True
-  elif board[2][0] == player:
+  if board[2][0] == player:
     bottom_left = True
-  elif board[2][2] == player:
+  if board[2][2] == player:
     bottom_right = True
   
-  #fill the gaps
+  #fill the gaps (vert, horiz)
   if (top_left) and (top_right) and (board[0][1]):
     r = 0
     c = 1
@@ -81,7 +78,7 @@ def move(player, board, score):
 
   # this is example0.py, it serves as a backup
     r = 0
-  c = 0
+    c = 0
   while board[r][c] != ' ':
     c = c + 1
     if c > 2:
