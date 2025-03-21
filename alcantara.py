@@ -30,6 +30,12 @@ def move(player, board, score):
   #offense
 
   #fill the gaps
+  
+  top_left = False
+  top_right = False
+  bottom_left = False
+  bottom_right = False
+  
   if board[0][0] == player:
     top_left = True
   elif board[0][2] == player:
