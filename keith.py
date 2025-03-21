@@ -19,7 +19,7 @@ def move(player, board, score):
         enemy = "O"
     else:
         enemy = "X"
-    s = 0 # to make sure it doesn't check forever
+    s = 0
     strat_list = [[board[0][0],board[0][1],board[0][2]], # 0 north
                   [board[0][2],board[1][2],board[2][2]], # 1 east
                   [board[2][0],board[2][1],board[2][2]], # 2 south
@@ -36,34 +36,22 @@ def move(player, board, score):
                  [1,1,1],
                  [0,1,2],
                  [0,1,2]]
-    # print(strat_list)
     while ready == False and s != 7:
-        # s = 0 # pick one at random--if you detect a non-empty, non-player token in that line, switch over
         line = strat_list[s][0]+strat_list[s][1]+strat_list[s][2]
-        # print(s)
-        # print(line)
         detect = line.find(enemy)
         aim = line.find(" ")
-        # print(detect)
-        # print(aim)
         if detect == -1:
-            # print("No opponent pieces found.")
             if aim != -1:
-                # print("Location found!")
                 ready = True
                 s = 0
                 r = rowfinder[s][aim]
                 c = aim
-                # print("Setting token at", r, c)
                 return r, c
             else:
-                # print("No empty spots. Switching strategies...")
                 s += 1
         else:
-            # print("Opponent found. Switching strategies...")
             s += 1
     if s == 7:
-        # print("No available wins. Switching to Next Open...")
         while board[r][c] != ' ':
           c = c + 1
           if c > 2:
