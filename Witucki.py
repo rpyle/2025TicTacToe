@@ -26,6 +26,9 @@ def move(player, board, score):
         c = 0
         r = r + 1
    
-    
-  
+   
+
+
+   
+ 
     return r, c
