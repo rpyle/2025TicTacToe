@@ -28,7 +28,5 @@ def move(player, board, score):
    
    
 
-
-   
  
     return r, c
