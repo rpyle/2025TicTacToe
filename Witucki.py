@@ -12,7 +12,11 @@ def print_board(board):
   print(print_board)
 
 def move(player, board, score):
-   corners = [(0,0), (0,2), (2,0), (2,2)]
+
+   
+   
+    corners = [(0,0), (0,2), (2,0), (2,2)]
+
     corners = [(r,c) for r, c in corners if board [r][c] == ""]
     if corners:
         return corners[0]
@@ -23,8 +27,11 @@ def move(player, board, score):
       if c > 2:
         c = 0
         r = r + 1
-    
 
-    
-  
-   return r, c
+   
+   
+
+ 
+    return r, c
+
+

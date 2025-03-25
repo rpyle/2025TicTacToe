@@ -34,7 +34,6 @@ number_of_rounds = 100
 modules = [example0,
            example1,
            example2,
-
            abboud,
            alcantara,
            Bennett,
