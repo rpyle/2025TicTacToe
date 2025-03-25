@@ -12,11 +12,14 @@ def print_board(board):
 
 def move(player, board, score):
   if player == 'X':
+     r = 2
+     c= 0
      other_player = 'O'
   else:
      other_player = "X"
-     r = 1
-     c = 1
+     r = 0
+     c = 2
+  
   #if center is open
   if board[1][1] == ' ':
     r = 2
