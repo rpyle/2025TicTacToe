@@ -50,5 +50,6 @@ def move(player, board, score):
         for (r, c) in edges:
              if spot_lineup == 2 and winning_cell is not None:
                 return winning_cell
-    
-   
+    return(1,1)
+
+ 
