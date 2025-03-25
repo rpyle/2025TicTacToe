@@ -7,11 +7,54 @@ import example1
 import example2
 import alcantara
 
+import abboud
+import alcantara
+import Bennett
+import coon
+import cueto
+import Dicroce
+import gans
+import hoagland
+import Johnson
+import keith
+import marquez
+import martinez
+import poore
+import Prum
+import reeves
+import Salih
+import singh
+import WENZEL
+import wilson
+import Witucki
+
+import pyle
+
+
 number_of_rounds = 100
 modules = [example0,
            example1,
            example2,
+           abboud,
            alcantara,
+           Bennett,
+           coon,
+           cueto,
+           Dicroce,
+           gans,
+           hoagland,
+           Johnson,
+           keith,
+           marquez,
+           martinez,
+           poore,
+           Prum,
+           reeves,
+           Salih,
+           singh,
+           WENZEL,
+           wilson,
+           pyle
           ]
 
 test_board = [['O', 'X', 'O'],
