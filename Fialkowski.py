@@ -1,22 +1,54 @@
 team_name = 'Fialkowski'
-strategy_name = 'corner to corner'
-strategy_description = 'Play the next open spot.'
+strategy_name = 'corner fill then win'
+strategy_description = 'Places in three corners first, then chooses an open edge on the 4th turn.'
 
 def print_board(board):
-  print(board[0][0]+'|'+board[0][1]+'|'+board[0][2])
-  print('-+-+-')
-  print(board[1][0]+'|'+board[1][1]+'|'+board[1][2])
-  print('-+-+-')
-  print(board[2][0]+'|'+board[2][1]+'|'+board[2][2])
-  print(print_board)
+    print(board[0][0] + '|' + board[0][1] + '|' + board[0][2])
+    print('-+-+-')
+    print(board[1][0] + '|' + board[1][1] + '|' + board[1][2])
+    print('-+-+-')
+    print(board[2][0] + '|' + board[2][1] + '|' + board[2][2])
 
 def move(player, board, score):
-  r = 0
-  c = 0
-  while board[r][c] != ' ':
-    c = c + 1
-    if c > 2:
-      c = 0
-      r = r + 1
-  
-  return r, c
+    corners = [(0, 0), (0, 2), (2, 0), (2, 2)]
+    edges   = [(0, 1), (1, 0), (1, 2), (2, 1)]
+    
+    moves_made = 0
+    for r in range(3):
+        for c in range(3):
+            if board[r][c] == player:
+                moves_made += 1
+    
+    if moves_made < 3:
+        for (r, c) in corners:
+            if board[r][c] == ' ':
+                return (r, c)
+    
+    if moves_made == 3:
+        Winning_lines = [
+            [(0, 0), (0, 1), (0, 2)],
+            [(1, 0), (1, 1), (1, 2)],
+            [(2, 0), (2, 1), (2, 2)],
+            [(0, 0), (1, 0), (2, 0)],
+            [(0, 1), (1, 1), (2, 1)],
+            [(0, 2), (1, 2), (2, 2)],
+            [(0, 0), (1, 1), (2, 2)],
+            [(0, 2), (1, 1), (2, 0)]
+        ]
+        for line in Winning_lines:
+            spot_lineup = 0
+            winning_cell = None #no value in spot then snipe it 
+            for (r, c) in line:
+                if board[r][c] == player:
+                    spot_lineup += 1
+                elif board[r][c] == ' ':
+                    winning_cell = (r, c)
+            if spot_lineup == 2 and winning_cell is not None:
+                return winning_cell
+        
+        # if winning spots are blocked. 
+        for (r, c) in edges:
+             if spot_lineup == 2 and winning_cell is not None:
+                return winning_cell
+    
+   
