@@ -10,6 +10,7 @@ import alcantara
 import abboud
 import alcantara
 import Bennett
+import bowers
 import coon
 import cueto
 import Dicroce
@@ -38,6 +39,7 @@ modules = [example0,
            abboud,
            alcantara,
            Bennett,
+           #bowers,
            coon,
            cueto,
            Dicroce,
@@ -54,6 +56,7 @@ modules = [example0,
            singh,
            WENZEL,
            wilson,
+           Witucki,
            pyle
           ]
 
