@@ -5,6 +5,7 @@ import importlib
 import example0
 import example1
 import example2
+
 import alcantara
 
 import abboud
@@ -32,10 +33,12 @@ import Witucki
 import pyle
 
 
+
 number_of_rounds = 100
 modules = [example0,
            example1,
            example2,
+
            abboud,
            alcantara,
            Bennett,
@@ -58,6 +61,7 @@ modules = [example0,
            wilson,
            Witucki,
            pyle
+
           ]
 
 test_board = [['O', 'X', 'O'],
