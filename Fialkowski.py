@@ -46,7 +46,7 @@ def move(player, board, score):
             if spot_in_winning_line == 2 and winning_spot is not None:
                 return winning_spot
         
-        # if winning spots are blocked. 
+        # if winning spots are blockedd. 
         for (r, c) in edges:
              if spot_in_winning_line == 2 and winning_spot is not None:
                 return winning_spot
