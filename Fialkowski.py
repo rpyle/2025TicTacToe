@@ -36,20 +36,20 @@ def move(player, board, score):
             [(0, 2), (1, 1), (2, 0)]
         ]
         for line in Winning_lines:
-            spot_lineup = 0
-            winning_cell = None #no value in spot then snipe it 
+            spot_in_winning_line = 0
+            winning_spot = None #no value in spot then snipe it 
             for (r, c) in line:
                 if board[r][c] == player:
-                    spot_lineup += 1
+                    spot_in_winning_line += 1
                 elif board[r][c] == ' ':
-                    winning_cell = (r, c)
-            if spot_lineup == 2 and winning_cell is not None:
-                return winning_cell
+                    winning_spot = (r, c)
+            if spot_in_winning_line == 2 and winning_spot is not None:
+                return winning_spot
         
         # if winning spots are blocked. 
         for (r, c) in edges:
-             if spot_lineup == 2 and winning_cell is not None:
-                return winning_cell
+             if spot_in_winning_line == 2 and winning_spot is not None:
+                return winning_spot
     return(1,1)
 
  
